@@ -1,6 +1,6 @@
-# sgradio
+# SG RADYO
 
-A new Flutter project.
+Radyo Web Sitesi
 
 ## Getting Started
 
