@@ -26,7 +26,9 @@ environment:
 # dependencies can be manually updated by changing the version numbers below to
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
-dependencies:
+dependencies: 
+  webviewx: ^0.2.1
+  #webview_flutter: ^3.0.4
   flutter:
     sdk: flutter
 
@@ -58,9 +60,16 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+     - assets/pictures/radyoLogo/JoyTurk.png
+     - assets/pictures/radyoLogo/KralPop.png
+     - assets/pictures/radyoLogo/MetroFm.png
+     - assets/pictures/radyoLogo/Nr1.png
+     - assets/pictures/radyoLogo/PalFm.png
+     - assets/pictures/radyoLogo/powerTurk.png
+     - assets/pictures/radyoLogo/radyo-35.png
+     - assets/pictures/radyoLogo/slowturk.png
+     - assets/pictures/radyoLogo/trt.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

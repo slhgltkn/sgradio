@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:sgradio/others/boyut.dart';
-import 'package:sgradio/others/responsive.dart';
+import 'package:sgradio/others/cards.dart';
+import 'package:sgradio/others/others/responsive.dart';
+import 'package:sgradio/others/kanallar.dart';
+import 'package:sgradio/others/API.dart';
+import 'package:sgradio/pages/kullanici.dart';
+import 'package:webview_flutter/webview_flutter.dart';
+import 'package:webviewx/webviewx.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -22,7 +27,25 @@ class Tablet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    Size size = MediaQuery.of(context).size;
+    return Scaffold(
+      backgroundColor: Color.fromARGB(255, 47, 6, 112),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(height: size.height * 0.035),
+            Logo(),
+            SizedBox(height: size.height * 0.2),
+            cardTablet(),
+            SizedBox(height: size.height * 0.2),
+            cardTablet2(),
+            SizedBox(height: size.height * 0.2),
+            cardTablet3(),
+            Powerturkapi()
+          ],
+        ),
+      ),
+    );
   }
 }
 
@@ -31,32 +54,61 @@ class Mobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    Size size = MediaQuery.of(context).size;
+    return Scaffold(
+      backgroundColor: Color.fromARGB(255, 47, 6, 112),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(height: size.height * 0.035),
+            Logo(),
+            SizedBox(height: size.height * 0.2),
+            cardMobile(),
+            SizedBox(height: size.height * 0.2),
+            cardMobile2(),
+            SizedBox(height: size.height * 0.2),
+            cardMobile3(),
+            SizedBox(height: size.height * 0.2),
+            cardMobile4(),
+            SizedBox(height: size.height * 0.2),
+            cardMobile5(),
+            SizedBox(height: size.height * 0.2),
+            cardMobile6(),
+          ],
+        ),
+      ),
+    );
   }
 }
 
-class Desktop extends StatelessWidget {
-  const Desktop({Key? key}) : super(key: key);
+class Desktop extends StatefulWidget {
+  const Desktop({super.key});
 
+  @override
+  State<Desktop> createState() => _DesktopState();
+}
+
+class _DesktopState extends State<Desktop> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-        backgroundColor: Color.fromARGB(255, 47, 6, 112),
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              SizedBox(height: size.height * 0.035),
-              Logo(),
-              SizedBox(height: size.height * 0.2),
-              Cards(),
-              SizedBox(height: size.height * 0.2),
-              Cards2(),
-              SizedBox(height: size.height * 0.2),
-              Cards3(),
-            ],
-          ),
-        ));
+      backgroundColor: Color.fromARGB(255, 47, 6, 112),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(height: size.height * 0.06),
+            Logo(),
+            SizedBox(height: size.height * 0.2),
+            Cards(),
+            SizedBox(height: size.height * 0.2),
+            Cards2(),
+            SizedBox(height: size.height * 0.2),
+            Cards3(),
+          ],
+        ),
+      ),
+    );
   }
 }
 
@@ -66,461 +118,68 @@ class Logo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Column(
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         SizedBox(height: size.height * 0.025),
+        SizedBox(width: size.width * 0.23),
         Center(
-          child: Text(
-            "SG Radyo",
-            textAlign: TextAlign.center,
-            style: TextStyle(color: Colors.white, fontSize: 30),
+          child: InkWell(
+            hoverColor: Color.fromARGB(255, 47, 6, 112),
+            focusColor: Color.fromARGB(255, 47, 6, 112),
+            splashColor: Color.fromARGB(255, 47, 6, 112),
+            highlightColor: Color.fromARGB(255, 47, 6, 112),
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => MainPage(),
+              ),
+            ),
+            child: Text(
+              "SG Radyo",
+              textAlign: TextAlign.center,
+              style: TextStyle(color: Colors.white, fontSize: 30),
+            ),
           ),
         ),
+        SizedBox(width: size.width * 0.001),
+        user(),
+        SizedBox(width: size.width * 0.1),
       ],
     );
   }
 }
 
-class Cards extends StatelessWidget {
-  const Cards({Key? key}) : super(key: key);
+class user extends StatelessWidget {
+  const user({super.key});
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        SizedBox(width: size.width * 0.06),
-        kralpop(),
-        powerturk(),
-        joyturk(),
-        SizedBox(width: size.width * 0.06),
-      ],
-    );
-  }
-}
-
-class kralpop extends StatelessWidget {
-  const kralpop({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Container(
-      width: 200,
-      height: 275,
-      decoration: BoxDecoration(
-        color: Color.fromARGB(255, 255, 255, 255),
-        borderRadius: BorderRadius.circular(15),
+    return InkWell(
+      hoverColor: Color.fromARGB(118, 255, 255, 255),
+      borderRadius: BorderRadius.circular(12),
+      onTap: () => Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => kullanici(),
+        ),
       ),
-      child: Column(
-        children: [
-          SizedBox(
-            height: size.height * 0.0087,
-          ),
-          Container(
-            width: 190,
-            height: 150,
-            decoration: BoxDecoration(
-              color: Colors.black,
-              borderRadius: BorderRadius.circular(12),
-            ),
-          ),
-          SizedBox(
-            height: size.height * 0.04,
-          ),
-          Text(
-            "KRAL POP",
-            style: TextStyle(
-              color: Color.fromARGB(255, 59, 59, 59),
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ],
+      child: Container(
+        margin: EdgeInsets.all(2),
+        width: 40,
+        height: 40,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: Colors.white,
+        ),
+        child: Icon(
+          Icons.person_rounded,
+          size: 25,
+          color: Color.fromARGB(255, 107, 19, 122),
+        ),
       ),
     );
   }
 }
 
-class powerturk extends StatelessWidget {
-  const powerturk({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Container(
-      width: 200,
-      height: 275,
-      decoration: BoxDecoration(
-        color: Color.fromARGB(255, 255, 255, 255),
-        borderRadius: BorderRadius.circular(15),
-      ),
-      child: Column(
-        children: [
-          SizedBox(
-            height: size.height * 0.0087,
-          ),
-          Container(
-            width: 190,
-            height: 150,
-            decoration: BoxDecoration(
-              color: Colors.black,
-              borderRadius: BorderRadius.circular(12),
-            ),
-          ),
-          SizedBox(
-            height: size.height * 0.04,
-          ),
-          Text(
-            "POWER TÜRK",
-            style: TextStyle(
-              color: Color.fromARGB(255, 59, 59, 59),
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class joyturk extends StatelessWidget {
-  const joyturk({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Container(
-      width: 200,
-      height: 275,
-      decoration: BoxDecoration(
-        color: Color.fromARGB(255, 255, 255, 255),
-        borderRadius: BorderRadius.circular(15),
-      ),
-      child: Column(
-        children: [
-          SizedBox(
-            height: size.height * 0.0087,
-          ),
-          Container(
-            width: 190,
-            height: 150,
-            decoration: BoxDecoration(
-              color: Colors.black,
-              borderRadius: BorderRadius.circular(12),
-            ),
-          ),
-          SizedBox(
-            height: size.height * 0.04,
-          ),
-          Text(
-            "JOY TÜRK",
-            style: TextStyle(
-              color: Color.fromARGB(255, 59, 59, 59),
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class Cards2 extends StatelessWidget {
-  const Cards2({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        SizedBox(width: size.width * 0.06),
-        slowturk(),
-        palfm(),
-        metrofm(),
-        SizedBox(width: size.width * 0.06),
-      ],
-    );
-  }
-}
-
-class slowturk extends StatelessWidget {
-  const slowturk({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Container(
-      width: 200,
-      height: 275,
-      decoration: BoxDecoration(
-        color: Color.fromARGB(255, 255, 255, 255),
-        borderRadius: BorderRadius.circular(15),
-      ),
-      child: Column(
-        children: [
-          SizedBox(
-            height: size.height * 0.0087,
-          ),
-          Container(
-            width: 190,
-            height: 150,
-            decoration: BoxDecoration(
-              color: Colors.black,
-              borderRadius: BorderRadius.circular(12),
-            ),
-          ),
-          SizedBox(
-            height: size.height * 0.04,
-          ),
-          Text(
-            "SLOW TÜRK",
-            style: TextStyle(
-              color: Color.fromARGB(255, 59, 59, 59),
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class palfm extends StatelessWidget {
-  const palfm({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Container(
-      width: 200,
-      height: 275,
-      decoration: BoxDecoration(
-        color: Color.fromARGB(255, 255, 255, 255),
-        borderRadius: BorderRadius.circular(15),
-      ),
-      child: Column(
-        children: [
-          SizedBox(
-            height: size.height * 0.0087,
-          ),
-          Container(
-            width: 190,
-            height: 150,
-            decoration: BoxDecoration(
-              color: Colors.black,
-              borderRadius: BorderRadius.circular(12),
-            ),
-          ),
-          SizedBox(
-            height: size.height * 0.04,
-          ),
-          Text(
-            "PAL FM",
-            style: TextStyle(
-              color: Color.fromARGB(255, 59, 59, 59),
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class metrofm extends StatelessWidget {
-  const metrofm({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Container(
-      width: 200,
-      height: 275,
-      decoration: BoxDecoration(
-        color: Color.fromARGB(255, 255, 255, 255),
-        borderRadius: BorderRadius.circular(15),
-      ),
-      child: Column(
-        children: [
-          SizedBox(
-            height: size.height * 0.0087,
-          ),
-          Container(
-            width: 190,
-            height: 150,
-            decoration: BoxDecoration(
-              color: Colors.black,
-              borderRadius: BorderRadius.circular(12),
-            ),
-          ),
-          SizedBox(
-            height: size.height * 0.04,
-          ),
-          Text(
-            "METRO FM",
-            style: TextStyle(
-              color: Color.fromARGB(255, 59, 59, 59),
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class Cards3 extends StatelessWidget {
-  const Cards3({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        SizedBox(width: size.width * 0.06),
-        numberone(),
-        trtfm(),
-        radyo35(),
-        SizedBox(width: size.width * 0.06),
-      ],
-    );
-  }
-}
-
-class numberone extends StatelessWidget {
-  const numberone({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Container(
-      width: 200,
-      height: 275,
-      decoration: BoxDecoration(
-        color: Color.fromARGB(255, 255, 255, 255),
-        borderRadius: BorderRadius.circular(15),
-      ),
-      child: Column(
-        children: [
-          SizedBox(
-            height: size.height * 0.0087,
-          ),
-          Container(
-            width: 190,
-            height: 150,
-            decoration: BoxDecoration(
-              color: Colors.black,
-              borderRadius: BorderRadius.circular(12),
-            ),
-          ),
-          SizedBox(
-            height: size.height * 0.04,
-          ),
-          Text(
-            "NR 1 TÜRK",
-            style: TextStyle(
-              color: Color.fromARGB(255, 59, 59, 59),
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class trtfm extends StatelessWidget {
-  const trtfm({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Container(
-      width: 200,
-      height: 275,
-      decoration: BoxDecoration(
-        color: Color.fromARGB(255, 255, 255, 255),
-        borderRadius: BorderRadius.circular(15),
-      ),
-      child: Column(
-        children: [
-          SizedBox(
-            height: size.height * 0.0087,
-          ),
-          Container(
-            width: 190,
-            height: 150,
-            decoration: BoxDecoration(
-              color: Colors.black,
-              borderRadius: BorderRadius.circular(12),
-            ),
-          ),
-          SizedBox(
-            height: size.height * 0.04,
-          ),
-          Text(
-            "TRT FM",
-            style: TextStyle(
-              color: Color.fromARGB(255, 59, 59, 59),
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class radyo35 extends StatelessWidget {
-  const radyo35({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Container(
-      width: 200,
-      height: 275,
-      decoration: BoxDecoration(
-        color: Color.fromARGB(255, 255, 255, 255),
-        borderRadius: BorderRadius.circular(15),
-      ),
-      child: Column(
-        children: [
-          SizedBox(
-            height: size.height * 0.0087,
-          ),
-          Container(
-            width: 190,
-            height: 150,
-            decoration: BoxDecoration(
-              color: Colors.black,
-              borderRadius: BorderRadius.circular(12),
-            ),
-          ),
-          SizedBox(
-            height: size.height * 0.04,
-          ),
-          Text(
-            "RADYO 35",
-            style: TextStyle(
-              color: Color.fromARGB(255, 59, 59, 59),
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
+/*https://www.youtube.com/embed/1oOaxpk7Xyw*/
