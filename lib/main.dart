@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sgradio/others/kanallar.dart';
 import 'package:sgradio/pages/kanalsayfalari.dart/joyturk.dart';
+import 'package:sgradio/pages/kanalsayfalari.dart/kralpop.dart';
 import 'package:sgradio/pages/kullanici.dart';
 import 'package:sgradio/pages/mainpage.dart';
 
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: joyturksayfa(),
+        body: MainPage(),
       ),
     );
   }

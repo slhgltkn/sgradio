@@ -1,5 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:sgradio/others/API.dart';
+import 'package:sgradio/pages/kanalsayfalari.dart/joyturk.dart';
+import 'package:sgradio/pages/kanalsayfalari.dart/kralpop.dart';
+import 'package:sgradio/pages/kanalsayfalari.dart/metrofm.dart';
+import 'package:sgradio/pages/kanalsayfalari.dart/nr1.dart';
+import 'package:sgradio/pages/kanalsayfalari.dart/palfm.dart';
+import 'package:sgradio/pages/kanalsayfalari.dart/powerturk.dart';
+import 'package:sgradio/pages/kanalsayfalari.dart/radyo35.dart';
+import 'package:sgradio/pages/kanalsayfalari.dart/slowturk.dart';
+import 'package:sgradio/pages/kanalsayfalari.dart/trtfm.dart';
 import 'package:sgradio/pages/mainpage.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
@@ -11,7 +20,12 @@ class kralpop extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return InkWell(
       borderRadius: BorderRadius.circular(18),
-      onTap: (() {}),
+      onTap: (() => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => kralpopsayfa(),
+            ),
+          )),
       hoverColor: Color.fromARGB(122, 140, 68, 255),
       highlightColor: Color.fromARGB(87, 47, 6, 112),
       child: Container(
@@ -68,7 +82,12 @@ class powerturk extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return InkWell(
       borderRadius: BorderRadius.circular(18),
-      onTap: (() {}),
+      onTap: (() => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => powerturksayfa(),
+            ),
+          )),
       hoverColor: Color.fromARGB(122, 140, 68, 255),
       highlightColor: Color.fromARGB(87, 47, 6, 112),
       child: Container(
@@ -119,7 +138,12 @@ class joyturk extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return InkWell(
       borderRadius: BorderRadius.circular(18),
-      onTap: (() {}),
+      onTap: (() => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => joyturksayfa(),
+            ),
+          )),
       hoverColor: Color.fromARGB(122, 140, 68, 255),
       highlightColor: Color.fromARGB(87, 47, 6, 112),
       child: Container(
@@ -170,7 +194,12 @@ class slowturk extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return InkWell(
       borderRadius: BorderRadius.circular(18),
-      onTap: (() {}),
+      onTap: (() => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => slowturksayfa(),
+            ),
+          )),
       hoverColor: Color.fromARGB(122, 140, 68, 255),
       highlightColor: Color.fromARGB(87, 47, 6, 112),
       child: Container(
@@ -227,7 +256,12 @@ class palfm extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return InkWell(
       borderRadius: BorderRadius.circular(18),
-      onTap: (() {}),
+      onTap: (() => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => palfmsayfa(),
+            ),
+          )),
       hoverColor: Color.fromARGB(122, 140, 68, 255),
       highlightColor: Color.fromARGB(87, 47, 6, 112),
       child: Container(
@@ -284,7 +318,12 @@ class metrofm extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return InkWell(
       borderRadius: BorderRadius.circular(18),
-      onTap: (() {}),
+      onTap: (() => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => metrofmsayfa(),
+            ),
+          )),
       hoverColor: Color.fromARGB(122, 140, 68, 255),
       highlightColor: Color.fromARGB(87, 47, 6, 112),
       child: Container(
@@ -335,7 +374,12 @@ class numberone extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return InkWell(
       borderRadius: BorderRadius.circular(18),
-      onTap: (() {}),
+      onTap: (() => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => nr1sayfa(),
+            ),
+          )),
       hoverColor: Color.fromARGB(122, 140, 68, 255),
       highlightColor: Color.fromARGB(87, 47, 6, 112),
       child: Container(
@@ -392,7 +436,12 @@ class trtfm extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return InkWell(
       borderRadius: BorderRadius.circular(18),
-      onTap: (() {}),
+      onTap: (() => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => trtsayfa(),
+            ),
+          )),
       hoverColor: Color.fromARGB(122, 140, 68, 255),
       highlightColor: Color.fromARGB(87, 47, 6, 112),
       child: Container(
@@ -449,7 +498,12 @@ class radyo35 extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return InkWell(
       borderRadius: BorderRadius.circular(18),
-      onTap: (() {}),
+      onTap: (() => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => radyo35sayfa(),
+            ),
+          )),
       hoverColor: Color.fromARGB(122, 140, 68, 255),
       highlightColor: Color.fromARGB(87, 47, 6, 112),
       child: Container(

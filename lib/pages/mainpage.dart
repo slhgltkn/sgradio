@@ -150,6 +150,36 @@ class Logo extends StatelessWidget {
   }
 }
 
+class Logo2 extends StatelessWidget {
+  const Logo2({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    return Center(
+      child: Center(
+        child: InkWell(
+          hoverColor: Color.fromARGB(255, 47, 6, 112),
+          focusColor: Color.fromARGB(255, 47, 6, 112),
+          splashColor: Color.fromARGB(255, 47, 6, 112),
+          highlightColor: Color.fromARGB(255, 47, 6, 112),
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => MainPage(),
+            ),
+          ),
+          child: Text(
+            "SG Radyo",
+            textAlign: TextAlign.center,
+            style: TextStyle(color: Colors.white, fontSize: 30),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 class user extends StatelessWidget {
   const user({super.key});
 
@@ -181,5 +211,3 @@ class user extends StatelessWidget {
     );
   }
 }
-
-/*https://www.youtube.com/embed/1oOaxpk7Xyw*/

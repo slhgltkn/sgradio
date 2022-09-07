@@ -46,8 +46,8 @@ class _Powerturkapi extends State<Powerturkapi> {
         borderRadius: BorderRadius.circular(25),
       ),
       child: WebViewX(
-        width: 190,
-        height: 95,
+        width: 440,
+        height: 180,
         initialContent:
             'https://live.powerapp.com.tr/powerturk/mpeg/icecast.audio?/;stream.mp3',
       ),
@@ -70,10 +70,10 @@ class KkralpopapiState extends State<Kralpopapi> {
         borderRadius: BorderRadius.circular(25),
       ),
       child: WebViewX(
-        width: 190,
-        height: 95,
+        width: 440,
+        height: 180,
         initialContent:
-            'https://radyo.radiosonline.net/files?uri=kralpopwmp.radyotvonline.com:80/&tkn=Ugy6pC_3TnvscXShAbVs7A&tms=1662428441',
+            'https://radyo.radiosonline.net/files?uri=kralpopwmp.radyotvonline.com:80/&tkn=G7AebQV7zTlJcS1pLYyOTQ&tms=1662575668',
       ),
     );
   }
@@ -94,8 +94,8 @@ class _JoyturkapiState extends State<Joyturkapi> {
         borderRadius: BorderRadius.circular(25),
       ),
       child: WebViewX(
-        width: 190,
-        height: 95,
+        width: 440,
+        height: 180,
         initialContent:
             'https://playerservices.streamtheworld.com/api/livestream-redirect/JOY_TURK_SC?/;stream.mp3',
       ),
@@ -118,8 +118,8 @@ class _SlowturkapiState extends State<Slowturkapi> {
         borderRadius: BorderRadius.circular(25),
       ),
       child: WebViewX(
-        width: 190,
-        height: 95,
+        width: 440,
+        height: 180,
         initialContent: 'https://radyo.duhnet.tv/slowturk?/;stream.mp3',
       ),
     );
@@ -141,8 +141,8 @@ class _PalfmapiState extends State<Palfmapi> {
         borderRadius: BorderRadius.circular(25),
       ),
       child: WebViewX(
-        width: 190,
-        height: 95,
+        width: 440,
+        height: 180,
         initialContent: 'https://radyo.duhnet.tv/slowturk?/;stream.mp3',
       ),
     );
@@ -164,8 +164,8 @@ class _MetrofmapiState extends State<Metrofmapi> {
         borderRadius: BorderRadius.circular(25),
       ),
       child: WebViewX(
-        width: 190,
-        height: 95,
+        width: 440,
+        height: 180,
         initialContent:
             'https://playerservices.streamtheworld.com/api/livestream-redirect/METRO_FM_SC?/;stream.mp3',
       ),
@@ -188,8 +188,8 @@ class _Nr1apiState extends State<Nr1api> {
         borderRadius: BorderRadius.circular(25),
       ),
       child: WebViewX(
-        width: 190,
-        height: 95,
+        width: 440,
+        height: 180,
         initialContent: 'https://n10101m.mediatriple.net/numberoneturk',
       ),
     );
@@ -211,8 +211,8 @@ class _TrtapiState extends State<Trtapi> {
         borderRadius: BorderRadius.circular(25),
       ),
       child: WebViewX(
-        width: 190,
-        height: 95,
+        width: 440,
+        height: 180,
         initialContent: 'https://nmicenotrt.mediatriple.net/trt_fm.aac?',
       ),
     );
@@ -234,8 +234,8 @@ class _Radyo35apiState extends State<Radyo35api> {
         borderRadius: BorderRadius.circular(25),
       ),
       child: WebViewX(
-        width: 190,
-        height: 95,
+        width: 440,
+        height: 180,
         initialContent: 'https://stream01.radyo35.com.tr/radyo35',
       ),
     );
